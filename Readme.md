@@ -1,7 +1,7 @@
 ## 說明
-AWS EC2設置：帳號建立、IAM設置、Security group 設定
-EC2網頁環境建置：Python環境建置、nginx環境建置、域名、SSL憑證取得、部署
-Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
+AWS EC2設置：帳號建立、IAM設置、Security group 設定 \
+EC2網頁環境建置：Python環境建置、nginx環境建置、域名、SSL憑證取得、部署 \
+Github檔案紀錄存放：帳號申請、安裝、上傳、markdown 
 ## AWS EC2設置
 1. 帳號建立
 2. IAM設置
