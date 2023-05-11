@@ -12,8 +12,10 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 1. Python環境建置
 2. nginx環境建置
 3. 域名
-4. SSL憑證取得
-5. 部署
+* 可至gandi、Amazon Route53購買
+
+5. SSL憑證取得
+6. 部署
 
 ## Github檔案紀錄存放
 1. github帳號申請
