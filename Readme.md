@@ -9,21 +9,21 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 找到Multi-factor authentication (MFA)，選擇Assign MFA device手機或任何行動裝置下載Authy或者其他軟體以進行綁定。
 * 之後登入會需要這個驗證有六碼數字[1]
 
-1-0 請先確定右上角的區域是離你最近的區域
-1-1 申請完後上方搜尋欄搜尋EC2，選擇後點選Launch instance
-![Imag](Img/SrhEC2.png)
-1-2 進入頁面後選擇AMi
-![Imag](Img/AMISel)
-1-3 instance type選擇t2.micro
-1-4 Key Pair方面建立一個Key pari (Create new key pair)
-1-5 Network Setting 中按照下圖設定
-![Imag](Img/NWS)
+1-0 請先確定右上角的區域是離你最近的區域 \
+1-1 申請完後上方搜尋欄搜尋EC2，選擇後點選Launch instance \
+<img src="Img/SrhEC2.png" width="600" > \
+1-2 進入頁面後選擇AMi \
+<img src="Img/AMISel.png" width="600" > \
+1-3 instance type選擇t2.micro \
+1-4 Key Pair方面建立一個Key pari (Create new key pair) \
+1-5 Network Setting 中按照下圖設定 \
+<img src="Img/NWS.png" width="600" > \
 1-6 Advanced detail找到IAM instance profile點選右邊Create new IAM profile \
-![Imag](Img/IAMR)
+<img src="Img/IAMR.png" width="600" > \
 選擇Create role，選AWS Service及EC2，搜尋並增加"AmazonEC2FullAccess"以及"AmazonSSMManagedInstanceCore" \
-結束後回至EC2匯入
-1-7 點選右側Launch instance
-1-8 點選啟動的EC2，選擇connect，選擇Session Manager，點選connect
+結束後回至EC2匯入 \
+1-7 點選右側Launch instance \
+1-8 點選啟動的EC2，選擇connect，選擇Session Manager，點選connect \
 
 
 2. IAM設置
@@ -57,8 +57,10 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 
 3. Security group 設定
 Security group設定建議如下圖所示：
-![Image](Img/Inbonce.png)
-![Image](Img/Outbonce.png)
+
+<img src="Img/Inbonce.png" width="600" >
+<img src="Img/Outbonce.png" width="600" >
+
 
 ## EC2網頁環境建置
 * 環境選擇：網頁環境可以有很多種選擇：語言可以有Java、Python，部署可以有Apache、Nginx、Tomcat
