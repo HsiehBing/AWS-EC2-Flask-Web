@@ -6,6 +6,8 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 1. 帳號建立
 * 至AWS申請帳號，期間會需要手機以及信用卡驗證
 * 申請成功後登入帳號，並點選在頁面右上方選擇Security credentials，
+
+<img src="Img/MFAS.png" width="600" > \
 找到Multi-factor authentication (MFA)，選擇Assign MFA device手機或任何行動裝置下載Authy或者其他軟體以進行綁定。
 * 之後登入會需要這個驗證有六碼數字[1]
 
