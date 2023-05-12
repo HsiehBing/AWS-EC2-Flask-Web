@@ -4,10 +4,32 @@ EC2網頁環境建置：Python環境建置、nginx環境建置、域名、SSL憑
 Github檔案紀錄存放：帳號申請、安裝、上傳、markdown 
 ## AWS EC2設置
 1. 帳號建立
+* 至AWS申請帳號，期間會需要手機以及信用卡驗證
+* 申請成功後登入帳號，並點選在頁面右上方選擇Security credentials，
+找到Multi-factor authentication (MFA)，選擇Assign MFA device手機或任何行動裝置下載Authy或者其他軟體以進行綁定。
+* 之後登入會需要這個驗證有六碼數字[1]
+
+1-0 請先確定右上角的區域是離你最近的區域
+1-1 申請完後上方搜尋欄搜尋EC2，選擇後點選Launch instance
+![Imag](Img/SrhEC2.png)
+1-2 進入頁面後選擇AMi
+![Imag](Img/AMISel)
+1-3 instance type選擇t2.micro
+1-4 Key Pair方面建立一個Key pari (Create new key pair)
+1-5 Network Setting 中按照下圖設定
+![Imag](Img/NWS)
+1-6 Advanced detail找到IAM instance profile點選右邊Create new IAM profile \
+![Imag](Img/IAMR)
+選擇Create role，選AWS Service及EC2，搜尋並增加"AmazonEC2FullAccess"以及"AmazonSSMManagedInstanceCore" \
+結束後回至EC2匯入
+1-7 點選右側Launch instance
+1-8 點選啟動的EC2，選擇connect，選擇Session Manager，點選connect
+
+
 2. IAM設置
 2-1.IAM的設置
 
-首先，最重要的是設定MFA[2]！
+首先，最重要的是設定MFA[1]！
 請至IAM中先在右邊欄位選取Users後再選擇Security credentials，並點選Assign MFA device，手機或任何行動裝置下載Authy或者其他軟體以進行綁定。
 
 * 這邊是練習如何設置最低權限，如果沒有要練習的話可以直接在設定完MFA之後加入admin就好！直接跳到下方EC2網頁環境設置
