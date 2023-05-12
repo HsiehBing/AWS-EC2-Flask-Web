@@ -35,6 +35,8 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 
 3. Security group 設定
 Security group設定建議如下圖所示：
+![Image](Img/Inbonce.png)
+![Image](Img/Outbonce.png)
 
 ## EC2網頁環境建置
 * 環境選擇：網頁環境可以有很多種選擇：語言可以有Java、Python，部署可以有Apache、Nginx、Tomcat
