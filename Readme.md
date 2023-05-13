@@ -81,9 +81,32 @@ Security group設定建議如下圖所示：
 
 ## Github檔案紀錄存放
 1. github帳號申請
-2. github安裝
+2. github安裝 \
 MacOS可以參考[3]，另外在啟動時有permission deny 時可以參考[4]
 3. 上傳github教學
+
+3-1 下載已經存在的repo
+先cd至要下載的資料夾，再以 \
+```git clone  https://github.com/{作者名稱}/{repoau名稱}```
+3-2 如果是開好repo第一次上傳 、
+先cd至要下載的資料夾，先好一個README.md內容可以先隨便打
+
+```
+git init 
+git add .
+git commit -m "{紀錄上傳重點}" 
+git remote add origin https://github.com/{作者名稱}/{repoau名稱}
+git push 
+```
+
+3-3
+在這之後會需要輸入使用者名稱以及密碼，Github在前一陣子把密碼改成只能用token \
+所以這個部分要額外處理:
+* 至自己的頁面右上角點選頭像->Setting->右邊欄位Developer settings->右邊欄位Personal access tokens \
+-> 選擇Tokens(class) ->Generate new token ->輸入密碼 ->輸入一個自己喜歡的名稱 \
+下方選擇“repo” 跟 "admin:repo_hood"，然後建立token並保留 
+
+
 4. markdown
 
 ## 最後更新日期 2023/5/13
