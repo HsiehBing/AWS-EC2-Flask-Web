@@ -3,7 +3,7 @@ AWS EC2設置：帳號建立、IAM設置、Security group 設定 \
 EC2網頁環境建置：Python環境建置、nginx環境建置、域名、SSL憑證取得、部署 \
 Github檔案紀錄存放：帳號申請、安裝、上傳、markdown 
 ## AWS EC2設置
-1. 帳號建立
+### 1. 帳號建立
 * 至AWS申請帳號，期間會需要手機以及信用卡驗證
 * 申請成功後登入帳號，並點選在頁面右上方選擇Security credentials，
 
@@ -28,8 +28,8 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 1-8 點選啟動的EC2，選擇connect，選擇Session Manager，點選connect \
 
 
-2. IAM設置
-2-1.IAM的設置
+### 2. IAM設置 
+2-1.IAM的設置 
 
 首先，最重要的是設定MFA[1]！
 請至IAM中先在右邊欄位選取Users後再選擇Security credentials，並點選Assign MFA device，手機或任何行動裝置下載Authy或者其他軟體以進行綁定。
@@ -39,7 +39,7 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 
 
 
-在IAM設置時需要設定三個東西，設定的細節我將附在文末參考資料後方。
+在IAM設置時需要設定三個東西，設定的細節我將附在文末參考資料後方。 \
 2-2. 可以參考這份資料[3]，在這之後會依最低限度建立只能使用EC2的IAM角色。關於EC2的設定如(1)所示
 
 2-3. 在設置完後測試後使用IAM登入時會如果有跑出如圖2的錯誤訊息，那麼需要在IAM policy中加入ComputeOptimizerReadOnlyAccess
@@ -57,7 +57,7 @@ Github檔案紀錄存放：帳號申請、安裝、上傳、markdown
 
 
 
-3. Security group 設定
+### 3. Security group 設定
 Security group設定建議如下圖所示：
 
 <img src="Img/Inbonce.png" width="600" >
@@ -67,28 +67,28 @@ Security group設定建議如下圖所示：
 ## EC2網頁環境建置
 * 環境選擇：網頁環境可以有很多種選擇：語言可以有Java、Python，部署可以有Apache、Nginx、Tomcat
 
-1. Python環境建置：
+### 1. Python環境建置：
 
 
-2. nginx環境建置：
+### 2. nginx環境建置：
 
-3. 域名：
+### 3. 域名：
 可至gandi、Amazon Route53購買
 可以透過A指向public IP
 
-5. SSL憑證取得
-6. 部署
+### 5. SSL憑證取得
+### 6. 部署
 
 ## Github檔案紀錄存放
-1. github帳號申請
-2. github安裝 \
+### 1. github帳號申請
+### 2. github安裝 \
 MacOS可以參考[3]，另外在啟動時有permission deny 時可以參考[4]
-3. 上傳github教學
+### 3. 上傳github教學
 
 3-1 下載已經存在的repo
 先cd至要下載的資料夾，再以 \
-```git clone  https://github.com/{作者名稱}/{repoau名稱}```
-3-2 如果是開好repo第一次上傳 、
+```git clone  https://github.com/{作者名稱}/{repoau名稱}``` \
+3-2 如果是開好repo第一次上傳  \
 先cd至要下載的資料夾，先好一個README.md內容可以先隨便打
 
 ```
@@ -107,7 +107,7 @@ git push
 下方選擇“repo” 跟 "admin:repo_hood"，然後建立token並保留 
 
 
-4. markdown
+### 4. markdown
 
 ## 最後更新日期 2023/5/13
 ## 參考資料
@@ -125,7 +125,7 @@ https://ithelp.ithome.com.tw/m/articles/10263551
 
 [4] ls: : Operation not permitted \
 https://discussions.apple.com/thread/252695259
-##附件
+### 附件
 (1)
 
 (2)
