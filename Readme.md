@@ -82,23 +82,30 @@ Security group設定建議如下圖所示：
 ## Github檔案紀錄存放
 1. github帳號申請
 2. github安裝
+MacOS可以參考[3]，另外在啟動時有permission deny 時可以參考[4]
 3. 上傳github教學
 4. markdown
 
-## 最後更新日期 2023/5/12
+## 最後更新日期 2023/5/13
 ## 參考資料
-[1]【Git】使用MacOS 作業系統安裝 Git - 以 Homebrew 網頁安裝 \
+
+
+
+[1]使用 AWS 中的多重要素驗證 \
+https://docs.aws.amazon.com/zh_tw/IAM/latest/UserGuide/id_credentials_mfa.html \
+
+[2]AmazonEC2FullAccess \
+https://docs.aws.amazon.com/zh_tw/aws-managed-policy/latest/reference/AmazonEC2FullAccess.html \
+
+[3]【Git】使用MacOS 作業系統安裝 Git - 以 Homebrew 網頁安裝 \
 https://ithelp.ithome.com.tw/m/articles/10263551
 
+[4] ls: : Operation not permitted \
+https://discussions.apple.com/thread/252695259
+##附件
+(1)
 
-[2]使用 AWS 中的多重要素驗證
-https://docs.aws.amazon.com/zh_tw/IAM/latest/UserGuide/id_credentials_mfa.html
-
-[3]AmazonEC2FullAccess
-https://docs.aws.amazon.com/zh_tw/aws-managed-policy/latest/reference/AmazonEC2FullAccess.html
-
-
-
+(2)
 
 
 
