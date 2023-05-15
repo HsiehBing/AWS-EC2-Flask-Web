@@ -126,9 +126,66 @@ https://ithelp.ithome.com.tw/m/articles/10263551
 [4] ls: : Operation not permitted \
 https://discussions.apple.com/thread/252695259
 ### 附件
-(1)
+(1) EC2簡化
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+            ],
+            "Effect": "Deny",
+            "Resource": "*"
+        },
+        {
+            "Action": "ec2:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
 
-(2)
+```
+(2) SSM簡化
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:RunInstances",
+                "ec2:StopInstances",
+                "ec2:DescribeInstanceStatus",
+"ssm:DescribeInstanceInformation"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:*"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ssm:resourceTag/Team": [
+                        "Alpha"
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+```
 
 
 
