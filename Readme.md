@@ -68,16 +68,38 @@ Security group設定建議如下圖所示：
 * 環境選擇：網頁環境可以有很多種選擇：語言可以有Java、Python，部署可以有Apache、Nginx、Tomcat
 
 ### 1. Python環境建置：
-
+```python -m venv tutorial-env```
 
 ### 2. nginx環境建置：
+```yum install -y nginx
+```
+### 3. gunicorn 建置：
+``` source /home/tutorial-env/bin/activate
+    pip install gunicorn
+```
 
 ### 3. 域名：
 可至gandi、Amazon Route53購買
 可以透過A指向public IP
 
 ### 5. SSL憑證取得
+```pip install certbot
+   pip install certbot-nginx
+```
+
 ### 6. 部署
+```
+#(1)啟動venv
+source /home/tutorial-env/bin/activate
+#(2)查看之前部署的預設8080port
+netstat -tulnp
+#(3)看8080 port 對應過去的PID，並移除該作業
+kill {PID}
+#(4)啟動新的服務 -w 是CPU使用個數、-b是port、-D是在背景執行 app:app是執行的python檔 
+gunicorn -w 1 -D -b localhost:8080 app:app
+
+```
+
 
 ## Github檔案紀錄存放
 ### 1. github帳號申請
