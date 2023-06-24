@@ -95,7 +95,8 @@ source /home/tutorial-env/bin/activate
 netstat -tulnp
 #(3)看8080 port 對應過去的PID，並移除該作業
 kill {PID}
-#(4)啟動新的服務 -w 是CPU使用個數、-b是port、-D是在背景執行 app:app是執行的python檔 
+#(4)cd至要部署服務的資料夾中
+#(5)啟動新的服務 -w 是CPU使用個數、-b是port、-D是在背景執行 app:app是執行的python檔
 gunicorn -w 1 -D -b localhost:8080 app:app
 
 ```
