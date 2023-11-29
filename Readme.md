@@ -209,7 +209,53 @@ https://discussions.apple.com/thread/252695259
 }
 
 ```
-
+(3) 整合policy - 前面policy有些錯誤，以最後這一版為主
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ssm:Describe*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Action": [
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+            ],
+            "Effect": "Deny",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:*",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:Describe*",
+                "ec2:DescribeInstanceStatus",
+                "ssm:DescribeInstanceInformation"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ssm:resourceTag/Team": [
+                        "Alpha"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
 
 
 
