@@ -256,6 +256,80 @@ https://discussions.apple.com/thread/252695259
     ]
 }
 ```
+(4)使用RDP client - Connect using Fleet Manager 最小權限
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:GetPasswordData"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "SSM",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:DescribeInstanceProperties",
+                "ssm:GetCommandInvocation",
+                "ssm:GetInventorySchema",
+                "ssm:DescribeInstanceInformation"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "SSMStartSession",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:StartSession"
+            ],
+            "Resource": [
+                "arn:aws:ssm:*::document/AWS-StartPortForwardingSession"
+            ],
+            "Condition": {
+                "BoolIfExists": {
+                    "ssm:SessionDocumentAccessCheck": "true"
+                },
+                "ForAnyValue:StringEquals": {
+                    "aws:CalledVia": "ssm-guiconnect.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "AccessTaggedInstances",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:StartSession"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:account-id:instance/*",
+                "arn:aws:ssm:*:account-id:managed-instance/*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "ssm:resourceTag/tag key": [
+                        "tag value"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "GuiConnect",
+            "Effect": "Allow",
+            "Action": [
+                "ssm-guiconnect:CancelConnection",
+                "ssm-guiconnect:GetConnection",
+                "ssm-guiconnect:StartConnection"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
 
 
 
